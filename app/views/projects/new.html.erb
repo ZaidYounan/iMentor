@@ -1,0 +1,40 @@
+<h1>Create a new project!</h1>
+
+<%= form_with model: @project do |form| %>
+    <div>
+      <%= form.label :project_name %><br>
+      <%= form.text_field :project_name%>
+      <% @project.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  
+    <div>
+      <%= form.label :project_description %><br>
+      <%= form.text_area :project_description %><br>
+      <% @project.errors.full_messages_for(:body).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+        <%= form.label :start_date %><br>
+        <%= form.date_field :start_date %>
+        <% @project.errors.full_messages_for(:current_date).each do |message| %>
+        <div><%= message %></div>
+        <% end %>
+    </div>  
+  
+    <div>
+        <%= form.label :end_date %><br>
+        <%= form.date_field :end_date %>
+        <% @project.errors.full_messages_for(:current_date).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>  
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+  
+  <%= link_to "Home", index_path %>

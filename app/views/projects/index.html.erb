@@ -1,0 +1,12 @@
+<h1>iSensei</h1>
+
+<ul> 
+    <% @projects.each do |project| %>
+        <div>
+           <li><h3><%= link_to project.project_name, project %></h3>
+          <p>Starting on: <%= link_to project.start_date.strftime("%A %d %B %Y"), project %></p>
+        </div>
+    <% end %>
+</ul>
+
+<h2 class="button"><%= link_to "Create New Project", new_project_path %></h2>

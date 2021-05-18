@@ -1,0 +1,12 @@
+<div>
+    <h3><%= @project.project_name %></h3>
+    <p><%= @project.project_description %> </p>
+    <p>Begins: <%= @project.start_date.strftime("%A %d %B %Y") %> </p>
+    <p>Ends: <%= @project.end_date.strftime("%A %d %B %Y")%> </p>
+</div>
+
+<%= link_to "Edit", edit_project_path %>
+<%= link_to "Delete", project_path(@project),
+                method: :delete,
+                data: { confirm: "Are you sure you want to delete this project?" } %>
+<p><%= link_to "Home", index_path %></p>
