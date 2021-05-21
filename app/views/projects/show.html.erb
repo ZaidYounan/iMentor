@@ -5,6 +5,31 @@
     <p>Ends: <%= @project.end_date.strftime("%A %d %B %Y")%> </p>
 </div>
 
+<h2>Comments</h2>
+<% @project.comments.each do |comment| %>
+  <p>
+    <strong>
+        <%= current_user.first_name %>
+        <%= current_user.last_name %> - 
+        <%= current_user.type%>
+    </strong>
+  </p>
+  <p>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_with model: [ @project, @project.comments.build ] do |form| %>
+
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+</p>
+<% end %>
+
 <% if current_user.mentor? %>
     <%= link_to "Edit", edit_project_path %>
 <% end %>
