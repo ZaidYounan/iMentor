@@ -9,4 +9,6 @@
     <% end %>
 </ul>
 
-<h2 class="button"><%= link_to "Create New Project", new_project_path %></h2>
+<% if current_user.mentor? %>
+    <h2 class="button"><%= link_to "Create New Project", new_project_path %></h2>
+<% end %>
