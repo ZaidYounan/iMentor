@@ -37,9 +37,14 @@ class ProjectsController < ApplicationController
 
     def destroy
         @project = Project.find(params[:id])
-        @project.destroy
+        if current_user == @project.user
+            @project.destroy
+            redirect_to index_path
+        else
+            redirect_to project_path, notice: "PERMISSION DENIED!"
+        end
         
-        redirect_to index_path
+        
     end
 
     private
