@@ -9,9 +9,8 @@
 <% @project.comments.each do |comment| %>
   <p>
     <strong>
-        <%= current_user.first_name %>
-        <%= current_user.last_name %> - 
-        <%= current_user.type%>
+        <%= comment.user.first_name %>
+        <%= comment.user.last_name %>
     </strong>
   </p>
   <p>
