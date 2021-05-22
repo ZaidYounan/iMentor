@@ -24,6 +24,11 @@ class ProjectsController < ApplicationController
 
     def edit
         @project = Project.find(params[:id])
+        if current_user == @project.user
+            @project = Project.find(params[:id])
+        else
+            redirect_to project_path, notice: "PERMISSION DENIED!"
+        end
     end
 
     def update
@@ -41,7 +46,7 @@ class ProjectsController < ApplicationController
             @project.destroy
             redirect_to index_path
         else
-            redirect_to project_path, notice: "PERMISSION DENIED!"
+            redirect_to project_path, notice: "PERMISSION DENIED!!!"
         end
         
         
