@@ -25,7 +25,11 @@ class ProfilesController < ApplicationController
     end
 
     def edit
-        @profile = current_user.profile
+        if current_user.profile == Profile.find(params[:id])
+            @profile = current_user.profile
+        else
+            redirect_to users_profile_path, notice: "PERMISSION DENIED!"
+        end
     end
 
     def update

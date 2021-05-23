@@ -4,6 +4,7 @@
     <p><%= @profile.interests %> </p>
     <p><%= @profile.background %> </p>
 </div>
-
-<p><%= link_to "Edit Profile", edit_users_profile_path %>
+<% if current_user.profile == Profile.find(params[:id]) %>
+    <p><%= link_to "Edit Profile", edit_users_profile_path %>
+<% end %>
 <p><%= link_to "Home", index_path %></p>
