@@ -34,6 +34,7 @@ class ProfilesController < ApplicationController
 
     def update
         @profile = current_user.profile
+        current_user.avatar.attach(profile_params[:avatar])
         if @profile.update(profile_params)
             redirect_to users_profile_path(current_user.profile.id)
         else
@@ -42,6 +43,6 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-        params.require(:profile).permit(:about_me, :motivations, :interests, :background)
+        params.require(:profile).permit(:about_me, :motivations, :interests, :background, :avatar)
     end
 end

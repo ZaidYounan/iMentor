@@ -1,4 +1,7 @@
 <div>
+    <% if @profile.avatar.present? %>
+        <%= image_tag url_for(@profile.avatar), class: "avatar" %> 
+    <% end %>
     <h3><%= @profile.about_me %> </h3>
     <p><%= @profile.motivations %> </p>
     <p><%= @profile.interests %> </p>
