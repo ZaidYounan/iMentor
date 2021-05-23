@@ -8,7 +8,11 @@ class ProjectsController < ApplicationController
     end
 
     def new
-        @project = Project.new
+        if current_user.type == 'Mentor'
+            @project = Project.new
+        else
+            redirect_to index_path, notice: "ERROR: STUDENT'S CANNOT CREATE PROJECTS."
+        end
     end
 
     def create
@@ -48,8 +52,6 @@ class ProjectsController < ApplicationController
         else
             redirect_to project_path, notice: "PERMISSION DENIED!!!"
         end
-        
-        
     end
 
     private
