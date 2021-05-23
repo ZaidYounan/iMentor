@@ -1,6 +1,6 @@
 <div>
     <h3><%= @project.project_name %></h3>
-    <p>Mentor - <%= @project.user.first_name %> <%= @project.user.last_name %>
+    <p><%= link_to "Mentor - " + @project.user.first_name + ' ' + @project.user.last_name, users_profile_path(@project.user.profile.id) %>
     <p><%= @project.project_description %> </p>
     <p>Begins: <%= @project.start_date.strftime("%A %d %B %Y") %> </p>
     <p>Ends: <%= @project.end_date.strftime("%A %d %B %Y")%> </p>
@@ -10,8 +10,7 @@
 <% @project.comments.each do |comment| %>
   <p>
     <strong>
-        <%= comment.user.first_name %>
-        <%= comment.user.last_name %>
+        <%= link_to comment.user.first_name + " " + comment.user.last_name, users_profile_path(comment.user.profile.id) %>
     </strong>
   </p>
   <p>
