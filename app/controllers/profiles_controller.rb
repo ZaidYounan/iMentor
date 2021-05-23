@@ -28,6 +28,15 @@ class ProfilesController < ApplicationController
         @profile = current_user.profile
     end
 
+    def update
+        @profile = current_user.profile
+        if @profile.update(profile_params)
+            redirect_to users_profile_path(current_user.profile.id)
+        else
+            render :show
+        end
+    end
+
     def profile_params
         params.require(:profile).permit(:about_me, :motivations, :interests, :background)
     end

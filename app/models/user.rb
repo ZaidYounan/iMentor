@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :comments
   has_one :profile
+  has_one_attached :avatar
   def mentor?
     false
   end
