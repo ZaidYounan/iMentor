@@ -3,10 +3,10 @@
     <% if @profile.avatar.present? %>
         <%= image_tag url_for(@profile.avatar), class: "avatar" %> 
     <% end %>
-    <h3><%= @profile.about_me %> </h3>
-    <p><%= @profile.motivations %> </p>
-    <p><%= @profile.interests %> </p>
-    <p><%= @profile.background %> </p>
+    <p><strong>About Me</strong> - <%= @profile.about_me %> </p>
+    <p><strong>Motivations</strong> - <%= @profile.motivations %> </p>
+    <p><strong>Interests</strong> - <%= @profile.interests %> </p>
+    <p><strong>Background</strong> - <%= @profile.background %> </p>
 </div>
 <% if current_user.profile == Profile.find(params[:id]) %>
     <p><%= link_to "Edit Profile", edit_users_profile_path %>

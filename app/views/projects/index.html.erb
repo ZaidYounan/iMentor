@@ -4,9 +4,13 @@
     <% @projects.each do |project| %>
         <div>
            <li><h3><%= link_to project.project_name, project %></h3>
-          <p>Starting on: <%= link_to project.start_date.strftime("%A %d %B %Y"), project %></p>
-          <p>Mentor - <%= link_to project.user.first_name + ' ' + project.user.last_name, users_profile_path(project.user.profile.id) %>
-          </p>
+           <p>Starting on: <%= link_to project.start_date.strftime("%A %d %B %Y"), project %></p>
+           <% if project.user.profile.present?%>
+            <p>Mentor - <%= link_to project.user.first_name + ' ' + project.user.last_name, users_profile_path(project.user.profile.id) %>
+            <% else %>
+            Mentor - <%= project.user.first_name + ' ' + project.user.last_name %>
+           <% end %>
+           </p>
         </div>
     <% end %>
 </ul>

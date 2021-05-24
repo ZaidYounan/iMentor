@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :comments
   has_one :profile
   has_one_attached :avatar
+  has_many :projects
   def mentor?
     false
   end

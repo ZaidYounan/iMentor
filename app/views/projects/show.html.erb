@@ -1,7 +1,8 @@
 <div>
     <h3><%= @project.project_name %></h3>
-    <p>Mentor - <%= link_to @project.user.first_name + ' ' + @project.user.last_name, users_profile_path(@project.user.profile.id) %>
-    <p><%= @project.project_description %> </p>
+    <p><strong>Mentor</strong> - <%= link_to @project.user.first_name + ' ' + @project.user.last_name, users_profile_path(@project.user.profile.id) %>
+    <p><strong>Description </strong> - <%= @project.project_description %>
+</p>
     <p>Begins: <%= @project.start_date.strftime("%A %d %B %Y") %> </p>
     <p>Ends: <%= @project.end_date.strftime("%A %d %B %Y")%> </p>
 </div>
