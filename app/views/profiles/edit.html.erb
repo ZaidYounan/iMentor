@@ -1,31 +1,32 @@
-<%= form_with model: [:users, @profile] do |f| %>
+<section class="profile-form"> 
+    <%= form_with model: [:users, @profile] do |f| %>
+        <div>
+            <%= f.label :avatar %>
+            <%= f.file_field :avatar %>
+        </div>
 
-    <div>
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar %>
-    </div>
+        <div class="field">
+            <%= f.label :about_me %><br />
+            <%= f.text_area :about_me, autofocus: true, autocomplete: "About Me" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :about_me %><br />
-        <%= f.text_area :about_me, autofocus: true, autocomplete: "About Me" %>
-    </div>
+        <div class="field">
+            <%= f.label :motivations %><br />
+            <%= f.text_area :motivations, autofocus: true, autocomplete: "Motivations" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :motivations %><br />
-        <%= f.text_area :motivations, autofocus: true, autocomplete: "Motivations" %>
-    </div>
+        <div class="field">
+            <%= f.label :interests %><br />
+            <%= f.text_area :interests, autofocus: true, autocomplete: "Interests" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :interests %><br />
-        <%= f.text_area :interests, autofocus: true, autocomplete: "Interests" %>
-    </div>
+        <div class="field">
+            <%= f.label :background %><br />
+            <%= f.text_area :background, autofocus: true, autocomplete: "Background" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :background %><br />
-        <%= f.text_area :background, autofocus: true, autocomplete: "Background" %>
-    </div>
-
-    <div class="actions">
-        <%= f.submit "Save" %>
-    </div>
-<% end %>
+        <div class="actions">
+            <%= f.submit "Save" %>
+        </div>
+    <% end %>
+</section>

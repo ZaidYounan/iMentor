@@ -1,5 +1,4 @@
 html, body {
-    //  text-align: center;
     font-family: "Helvetica Neue";
     background: linear-gradient(rgba(0, 128, 0, 0.35), rgba(15,116,5,0.2));
     margin:0;
@@ -270,4 +269,10 @@ input.project-form {
     text-decoration: none;
     font-size: 16px;
     border-radius: 0.3em;
+}
+
+section.profile-form {
+    display:flex;
+    justify-content:center;
+    text-align:center;
 }
