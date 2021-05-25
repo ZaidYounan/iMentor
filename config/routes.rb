@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :profiles
   end
 
+  resources :projects_students, only:  [:create]
+  
   resources :transactions, only: [:create]
   get 'checkout/success', to: 'transactions#success'
 

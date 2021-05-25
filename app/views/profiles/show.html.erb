@@ -1,14 +1,26 @@
-<div>
-    <h1> <%= @profile.user.first_name + ' ' + @profile.user.last_name %> </h3>
-    <% if @profile.avatar.present? %>
-        <%= image_tag url_for(@profile.avatar), class: "avatar" %> 
-    <% end %>
-    <p><strong>About Me</strong> - <%= @profile.about_me %> </p>
-    <p><strong>Motivations</strong> - <%= @profile.motivations %> </p>
-    <p><strong>Interests</strong> - <%= @profile.interests %> </p>
-    <p><strong>Background</strong> - <%= @profile.background %> </p>
-</div>
+<section class="profile-div">
+
+        <% if @profile.avatar.present? %>
+            <%= image_tag url_for(@profile.avatar), class: "avatar" %> 
+        <% end %>
+
+    <div class="text-div">
+            <h1> <%= @profile.user.first_name + ' ' + @profile.user.last_name %> </h3>
+        <p class="profile-text">
+            <strong>About Me</strong> - <%= @profile.about_me %>
+        </p>
+        <p class="profile-text">
+            <strong>Motivations</strong> - <%= @profile.motivations %>
+        </p>
+        <p class="profile-text">
+            <strong>Interests</strong> - <%= @profile.interests %> 
+        </p>
+        <p class="profile-text">
+            <strong>Background</strong> - <%= @profile.background %> 
+        </p>
+    </div>
+</section>
+<p class="profile-options">
 <% if current_user.profile == Profile.find(params[:id]) %>
-    <p><%= link_to "Edit Profile", edit_users_profile_path %>
-<% end %>
-<p><%= link_to "Home", index_path %></p>
+    <%= link_to "Edit Profile", edit_users_profile_path, class: "profile-options" %>
+<% end %> </p>

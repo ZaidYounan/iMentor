@@ -1,51 +1,59 @@
-<div>
-    <h3><%= @project.project_name %></h3>
-    <p><strong>Mentor</strong> - <%= link_to @project.user.first_name + ' ' + @project.user.last_name, users_profile_path(@project.user.profile.id) %>
-    <p><strong>Description </strong> - <%= @project.project_description %>
-</p>
-    <p>Begins: <%= @project.start_date.strftime("%A %d %B %Y") %> </p>
-    <p>Ends: <%= @project.end_date.strftime("%A %d %B %Y")%> </p>
-</div>
-
-
-<button type="button" id="checkout-button">Checkout</button>
-
-
-<h2>Comments</h2>
-<% @project.comments.each do |comment| %>
-  <p>
-    <strong>
-      <%= link_to comment.user.first_name + " " + comment.user.last_name, users_profile_path(comment.user.profile.id) %>
-    </strong>
-      <%= comment.created_at.strftime("%d/%m/%Y, %H:%M:%S %p") %>
+<section class="show-page">
+  <div>
+      <h3><%= @project.project_name %></h3>
+      <p><strong>Mentor</strong> - 
+      <% if @project.user.profile.present? %>
+        <%= link_to @project.user.first_name + ' ' + @project.user.last_name, users_profile_path(@project.user.profile.id) %>
+      <% else %>
+        <%= @project.user.first_name + ' ' + @project.user.first_name %>
+      <% end %>
+      <p><strong>Description </strong> - <%= @project.project_description %>
+      <p><strong>Students</strong> - </p>
   </p>
-  <p>
-    <%= comment.body %>
+      <p>Begins: <%= @project.start_date.strftime("%A %d %B %Y") %> </p>
+      <p>Ends: <%= @project.end_date.strftime("%A %d %B %Y")%> </p>
+  </div>
+
+  <div>
+    <%= link_to "Enrol", projects_students_path, :method => :post %>
+  </div>
+  <button type="button" id="checkout-button">Checkout</button>
+
+
+  <h2>Comments</h2>
+  <% @project.comments.each do |comment| %>
+    <p>
+      <strong>
+        <%= link_to comment.user.first_name + " " + comment.user.last_name, users_profile_path(comment.user.profile.id) %>
+      </strong>
+        <%= comment.created_at.strftime("%d/%m/%Y, %H:%M:%S %p") %>
+    </p>
+    <p>
+      <%= comment.body %>
+    </p>
+  <% end %>
+
+  <h3>Add a comment:</h3>
+  <%= form_with model: [ @project, @project.comments.build ] do |form| %>
+
+      <%= form.label :body %><br>
+      <%= form.text_area :body %>
+    </p>
+    <p>
+      <%= form.submit %>
   </p>
-<% end %>
+  <% end %>
 
-<h2>Add a comment:</h2>
-<%= form_with model: [ @project, @project.comments.build ] do |form| %>
+  <% if current_user.mentor? && @project.user == current_user %>
+      <%= link_to "Edit", edit_project_path %>
+  <% end %>
 
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-</p>
-<% end %>
-
-<% if current_user.mentor? && @project.user == current_user %>
-    <%= link_to "Edit", edit_project_path %>
-<% end %>
-
-<% if current_user.mentor? && @project.user == current_user %>
-    <%= link_to "Delete", project_path(@project),
-                    method: :delete,
-                    data: { confirm: "Are you sure you want to delete this project?" } %>
-<% end %>
-
-<p><%= link_to "Home", index_path %></p>
+  <% if current_user.mentor? && @project.user == current_user %>
+      <%= link_to "Delete", project_path(@project),
+                      method: :delete,
+                      data: { confirm: "Are you sure you want to delete this project?" } %>
+  <% end %>
+</section>
 
 <script type="text/javascript">
     // Create an instance of the Stripe object with your publishable API key

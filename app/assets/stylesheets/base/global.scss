@@ -1,0 +1,139 @@
+html, body {
+    //  text-align: center;
+    font-family: "Helvetica Neue";
+    background: linear-gradient(rgba(0, 128, 0, 0.35), rgba(15,116,5,0.2));
+    margin:0;
+    padding: 0;
+    height:100%;
+ }
+
+img {
+     width: 300px;
+     height: 300px;
+ }
+
+.button {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.3em;
+}
+
+a.new-entry {
+    color:white;
+}
+
+h1.profile-name {
+    position:absolute;
+    left:10%;    
+    top:8%;
+    margin:0;
+}
+
+img {
+    border-radius: 1em;
+    width: 30%;
+    height:40%;
+    margin-left:1%;
+    margin-top:3%;
+}
+
+section.profile-div {
+    display:flex;
+    justify-content: center;
+    height:100%;
+    border:solid black 1px;
+}
+
+p.profile-text {
+    display:flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px;
+    padding:5px;
+    margin-right:10px;
+    background-color: #009DB1;
+
+}
+strong {
+    padding-bottom: 5px;
+}
+
+div.text-div {
+    overflow: scroll;
+    margin-left:2%;
+    margin-top:1%;
+}
+
+div.name-profile {
+    color:white;
+}
+
+div.name-profile {
+    text-align: right;
+    right: 3%;
+    position: absolute;
+}
+
+p.profile-options {
+text-align: center;
+}
+
+a.profile-options {
+    margin:5px;
+}
+
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+nav.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+div.index {
+    display:flex;
+    justify-content:center;
+}
+
+div.index-text {
+    display:inline-block;
+}
+
+section.project-form {
+    display:flex;
+    justify-content: center;
+}
+
+div.project-form {
+    margin: 10px;
+}
+
+#project_project_description {
+    width: 300px;
+    height: 100px;
+}
+
+section.show-page {
+margin-left: 2.5%;
+}

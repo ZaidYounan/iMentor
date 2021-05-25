@@ -11,22 +11,24 @@
   </head>
 
   <body>
-    <p class="navbar-text float-right">
-    <% if user_signed_in? %>
-    <% if current_user.profile.present? %>
-      Logged in as <%= link_to current_user.first_name, users_profile_path(current_user.profile.id), :class => 'navbar-link' %>
-    <% else %>
-      <%= link_to "Create A Profile!", new_users_profile_path, :method => :get, :class => 'navbar-link' %>
-    <% end %>
-    
-    <%= link_to 'Account Management', edit_user_registration_path, :class => 'navbar-link' %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-  <% end %>
 
-  </p>
+<nav class="navbar">
+<div class="name-profile">
+  <% if user_signed_in? %>
+        <% if current_user.profile.present? %>
+        <%= link_to current_user.first_name + ' ' + current_user.last_name, users_profile_path(current_user.profile.id) %>
+        <% else %>
+          <%= link_to "Create A Profile!", new_users_profile_path, :method => :get %>
+        <% end %>
+      </div>
+    <%= link_to "Home", index_path%>
+    <%= link_to 'Account Management', edit_user_registration_path %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> |
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
+  </nav>
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
   <% end %>
