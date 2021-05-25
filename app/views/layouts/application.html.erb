@@ -20,14 +20,16 @@
         <% else %>
           <%= link_to "Create A Profile!", new_users_profile_path, :method => :get %>
         <% end %>
-      </div>
+</div>
     <%= link_to "Home", index_path%>
     <%= link_to 'Account Management', edit_user_registration_path %> |
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
   <% else %>
+<div class="login-profile">
     <%= link_to "Sign up", new_user_registration_path %> |
     <%= link_to "Login", new_user_session_path %>
   <% end %>
+</div>
   </nav>
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
