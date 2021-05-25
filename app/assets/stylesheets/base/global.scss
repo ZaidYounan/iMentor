@@ -114,6 +114,7 @@ nav.navbar a {
 div.index {
     display:flex;
     justify-content:center;
+    height:100%;
 }
 
 div.index-text {
@@ -253,7 +254,6 @@ div.account-management-text {
     text-decoration: none;
     font-size: 16px;
     border-radius: 0.3em;
-    height:100%;
 }
 
 section.account-management {
