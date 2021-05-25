@@ -13,7 +13,7 @@ img {
  }
 
 .button {
-  background-color: #008CBA;
+  background-color: #003CBA;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -118,6 +118,13 @@ div.index {
 
 div.index-text {
     display:inline-block;
+    background-color: #009FBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 0.3em;
 }
 
 section.project-form {
@@ -132,6 +139,15 @@ div.project-form {
 #project_project_description {
     width: 300px;
     height: 100px;
+    background-color: #001FBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0.3em;
 }
 
 section.show-page {
@@ -163,8 +179,44 @@ button.show-buttons {
   border-radius: 0.3em;
 }
 
-input {
-      background-color: #001FBA;
+input.edit-submit {
+  background-color: #001FBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.3em;
+}
+
+input#project_project_name {
+  background-color: #001FBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.3em;
+}
+
+input#project_start_date {
+  background-color: #001FBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.3em;
+}
+
+input#project_end_date {
+  background-color: #001FBA;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -178,4 +230,34 @@ input {
 textarea#comment_body {
     width: 300px;
     height: 100px;
+}
+
+textarea {
+    background-color: #001FBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0.3em;
+}
+
+div.account-management-text {
+    display:inline-block;
+    background-color: #009FBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 0.3em;
+    height:100%;
+}
+
+section.account-management {
+    display:flex;
+    justify-content:center;
+    height:100%;
 }
