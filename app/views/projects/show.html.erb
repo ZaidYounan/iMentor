@@ -5,7 +5,7 @@
       <% if @project.user.profile.present? %>
         <%= link_to @project.user.first_name + ' ' + @project.user.last_name, users_profile_path(@project.user.profile.id) %>
       <% else %>
-        <%= @project.user.first_name + ' ' + @project.user.first_name %>
+        <%= @project.user.first_name + ' ' + @project.user.last_name %>
       <% end %>
       <p><strong>Description </strong> - <%= @project.project_description %>
       <p><strong>Students</strong> - </p>
@@ -15,10 +15,11 @@
   </div>
 
   <div>
-    <%= link_to "Enrol", projects_students_path, :method => :post %>
+    <%= link_to "Enrol", projects_students_path, :method => :post, class: "show-buttons" %>
+   <button type="button" id="checkout-button" class="show-buttons">Donate $5</button>
   </div>
-  <button type="button" id="checkout-button">Checkout</button>
 
+  
 
   <h2>Comments</h2>
   <% @project.comments.each do |comment| %>
@@ -33,10 +34,10 @@
     </p>
   <% end %>
 
-  <h3>Add a comment:</h3>
+
   <%= form_with model: [ @project, @project.comments.build ] do |form| %>
 
-      <%= form.label :body %><br>
+      <%= form.label 'Add a comment:' %></br>
       <%= form.text_area :body %>
     </p>
     <p>

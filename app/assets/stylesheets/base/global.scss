@@ -137,3 +137,45 @@ div.project-form {
 section.show-page {
 margin-left: 2.5%;
 }
+
+a.show-buttons {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.3em;
+    
+}
+
+button.show-buttons {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.3em;
+}
+
+input {
+      background-color: #001FBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.3em;
+}
+
+textarea#comment_body {
+    width: 300px;
+    height: 100px;
+}
