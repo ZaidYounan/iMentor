@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
 
     def edit
         @project = Project.find(params[:id])
-        if @profile.user == current_user
+        if @project.user == current_user
             @project = Project.find(params[:id])
         else
             redirect_to project_path, notice: "PERMISSION DENIED!"
