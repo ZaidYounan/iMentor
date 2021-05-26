@@ -6,9 +6,10 @@ html, body {
     margin:0;
  }
 
+
+
 section.about-page {
-    display:flex;
-    justify-content:center;
+    
     margin-top:5%;
     height:100%;
 }
@@ -20,7 +21,34 @@ div.about-page {
     width: 50%;
     box-shadow: 5px 10px 25px;
     padding:5px;
+    float:left;
+    margin: 0 5% 5% 5%;
  }
+
+ div.about-text {
+     display:inline-block;
+     width: 30%;
+     box-shadow: 5px 5px 15px;
+     padding:5px;
+     background-color: #6497b1;
+     font-family:Verdana;
+ }
+
+ @media screen and (max-width: 600px) {
+    section.about-page {
+        text-align:center;
+    }
+
+    div.about-page {
+        width:auto;
+        float:none;
+    }
+
+    div.about-text {
+        width:auto;
+        margin:5%;
+    }
+}
 
 img {
      width: 300px;
@@ -101,6 +129,25 @@ div.sign-profile {
     overflow:hidden;
 }
 
+h3.sign-up-acct {
+    text-align: right;
+    right: 1%;
+    overflow:hidden;
+}
+
+input.actions-button {
+    background-color: #03396c;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0.3em;
+    margin-top: 5%;
+}
+
 p.profile-options {
 text-align: center;
 }
@@ -169,7 +216,7 @@ div.project-form {
 #project_project_description {
     width: 300px;
     height: 100px;
-    background-color: #001FBA;
+    background-color: #6497b1;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -222,7 +269,7 @@ input.edit-submit {
 }
 
 input#project_project_name {
-  background-color: #001FBA;
+  background-color: #6497b1;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -234,7 +281,7 @@ input#project_project_name {
 }
 
 input#project_start_date {
-  background-color: #001FBA;
+  background-color: #6497b1;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -246,7 +293,7 @@ input#project_start_date {
 }
 
 input#project_end_date {
-  background-color: #001FBA;
+  background-color: #6497b1;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -274,9 +321,15 @@ textarea {
     border-radius: 0.3em;
 }
 
+div.actions {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+}
+
 div.account-management-text {
     display:inline-block;
-    background-color: #009FBA;
+    background-color: #6497b1;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -292,7 +345,7 @@ section.account-management {
 }
 
 input.project-form {
-    background-color: #009FBA;
+    background-color: #03396c;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -327,14 +380,14 @@ div.login-profile {
 }
 
 div.login-page-button {
-    background-color: #001FBA;
+    background-color: #03396c;
     border: none;
     color: white;
     padding: 15px 32px;
     text-decoration: none;
     font-size: 16px;
     border-radius: 0.3em;
-    margin:5px;
+    margin:10px;
     width:fit-content;
 }
 
@@ -349,6 +402,7 @@ div.project-index {
     border: solid black 1px;
     background: #6497b1;
     box-shadow: 5px 5px 10px;
+    font-family:Verdana;
 }
 
 div.imentor {
