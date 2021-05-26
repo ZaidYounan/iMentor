@@ -8,14 +8,23 @@
         <%= @project.user.first_name + ' ' + @project.user.last_name %>
       <% end %>
       <p><strong>Description </strong> - <%= @project.project_description %>
-      <p><strong>Students</strong> - </p>
+      <p><strong>Students</strong> - </p> 
+      <% @project.students.each do |students| %>
+        <% if students.profile.present? %>
+          <%= link_to students.first_name + ' ' + students.last_name, users_profile_path(students.profile.id) %>
+          <br>
+        <% else %>
+          <%= students.first_name + ' ' + students.last_name %>
+        <br>
+        <% end %>
+      <% end %>
   </p>
       <p>Begins: <%= @project.start_date.strftime("%A %d %B %Y") %> </p>
       <p>Ends: <%= @project.end_date.strftime("%A %d %B %Y")%> </p>
   </div>
 
   <div>
-    <%= link_to "Enrol", projects_students_path, :method => :post, class: "show-buttons" %>
+    <%= link_to "Enrol", project_projects_students_path(@project), :method => :post, class: "show-buttons" %>
    <button type="button" id="checkout-button" class="show-buttons">Donate $5</button>
   </div>
 

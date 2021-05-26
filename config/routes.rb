@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   get "/index", to: "projects#index"
   resources :projects do
     resources :comments
+    resources :projects_students, only:  [:create]
+    # post "enrol" => "projects_students#create"
   end
 
   resource :users do
     resources :profiles
   end
-
-  resources :projects_students, only:  [:create]
   
   resources :transactions, only: [:create]
   get 'checkout/success', to: 'transactions#success'

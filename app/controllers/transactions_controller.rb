@@ -5,10 +5,10 @@ class TransactionsController < ApplicationController
             payment_method_types: ['card'],
             line_items: [{
               price_data: {
-                unit_amount: 2000,
+                unit_amount: 500,
                 currency: 'usd',
                 product_data: {
-                  name: 'Stubborn Attachments',
+                  name: 'Donate to Mentor',
                 },
               },
               quantity: 1,
