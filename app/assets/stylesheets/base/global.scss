@@ -1,9 +1,25 @@
 html, body {
     font-family: "Helvetica Neue";
-    background: linear-gradient(rgba(0, 128, 0, 0.35), rgba(15,116,5,0.2));
-    margin:0;
+    background: #b3cde0;
     padding: 0;
     height:100%;
+    margin:0;
+ }
+
+section.about-page {
+    display:flex;
+    justify-content:center;
+    margin-top:5%;
+    height:100%;
+}
+
+div.about-page {
+    background-image: url(image1.jpeg);
+    background-size: 100% 100%;
+    height: 70%;
+    width: 50%;
+    box-shadow: 5px 10px 25px;
+    padding:5px;
  }
 
 img {
@@ -12,7 +28,7 @@ img {
  }
 
 .button {
-  background-color: #003CBA;
+  background-color: #03396c;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -75,12 +91,14 @@ div.text-div {
 
 div.name-profile {
     color:white;
+    text-align: right;
+    right: 1%;
+    position: absolute;
 }
 
-div.name-profile {
-    text-align: right;
-    right: 3%;
-    position: absolute;
+div.sign-profile {
+    background-color: rgb(254, 237, 142);
+    overflow:hidden;
 }
 
 p.profile-options {
@@ -92,8 +110,14 @@ a.profile-options {
 }
 
 .navbar {
-  background-color: #333;
+  background-color: #011f4b;
   overflow: hidden;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+h3 {
+    margin:0;
 }
 
 .navbar a:hover {
@@ -108,16 +132,17 @@ a.profile-options {
 
 nav.navbar a {
     float: left;
-    color: #f2f2f2;
+    color: azure;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    font-size-adjust: inherit;
 }
 
 div.index {
     display:flex;
-    justify-content:wrap;
+    flex-wrap: wrap;
     height:fit-content;
 }
 
@@ -322,6 +347,25 @@ div.project-index {
     margin: 15px;
     padding:10px;
     border: solid black 1px;
-    background: rgb(106, 170, 238);
+    background: #6497b1;
     box-shadow: 5px 5px 10px;
+}
+
+div.imentor {
+    display:flex;
+    justify-content:inherit;
+    justify-content:center;
+    color:white;
+    font-size:20px;
+    overflow:hidden;
+}
+
+h1.imentor {
+    display:flex;
+    justify-content:center;
+    color:azure;
+    font-size:25px;
+    margin:0;
+    font-family:Verdana;
+
 }

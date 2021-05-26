@@ -1,7 +1,6 @@
 <body class="container">
 
 <div class="index">
-    <h1>iMentor</h1>
         <% @projects.each do |project| %>
             <div class="project-index">
             <h3><%= link_to project.project_name, project %></h3>

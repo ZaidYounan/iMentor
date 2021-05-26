@@ -9,27 +9,30 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://js.stripe.com/v3/"></script>
   </head>
-
-  <body>
-
-<nav class="navbar">
-<div class="name-profile">
-  <% if user_signed_in? %>
-        <% if current_user.profile.present? %>
-        <%= link_to current_user.first_name + ' ' + current_user.last_name, users_profile_path(current_user.profile.id) %>
-        <% else %>
-          <%= link_to "Create A Profile!", new_users_profile_path, :method => :get %>
-        <% end %>
-</div>
-    <%= link_to "Home", index_path%>
-    <%= link_to 'Account Management', edit_user_registration_path %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <% else %>
-<div class="login-profile">
-    <%= link_to "Sign up", new_user_registration_path %> |
-    <%= link_to "Login", new_user_session_path %>
+<body>
+  <nav class="navbar">
+  <h1 class="imentor">iMentor</h1>
+    <div class="name-profile">
+      <% if user_signed_in? %>
+            <% if current_user.profile.present? %>
+            <h3>
+              <%= link_to current_user.first_name + ' ' + current_user.last_name, users_profile_path(current_user.profile.id) %>
+            </h3>
+            <% else %>
+              <%= link_to "Create A Profile!", new_users_profile_path, :method => :get %>
+      <% end %>
+    </div>
+      <h3>
+        <%= link_to "Home", index_path%>
+        <%= link_to 'Account Management', edit_user_registration_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </h3>
+      <% else %>
+    <div class="sign-profile">
+        <%= link_to "Sign up", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %>
   <% end %>
-</div>
+    </div>
   </nav>
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>

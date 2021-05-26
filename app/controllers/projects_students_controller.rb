@@ -1,4 +1,5 @@
 class ProjectsStudentsController < ApplicationController
+    before_action :authenticate_user!
     def create
         if current_user.type == 'Student'
             @project = Project.find(params[:project_id])

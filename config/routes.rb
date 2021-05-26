@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   
-  root "projects#index"
+  root "about#show"
   get "/index", to: "projects#index"
   resources :projects do
     resources :comments
     resources :projects_students, only:  [:create, :show]
-    # post "enrol" => "projects_students#create"
   end
+
+  get '/index' => "projects#index", :as => :user_root
 
   resource :users do
     resources :profiles
