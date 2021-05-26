@@ -119,9 +119,11 @@ div.text-div {
 
 div.name-profile {
     color:white;
-    text-align: right;
-    right: 1%;
-    position: absolute;
+    width:40%;
+    display:flex;
+    justify-content:flex-end;
+    position:absolute;
+    right:1%;
 }
 
 div.sign-profile {
