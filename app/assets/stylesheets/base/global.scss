@@ -23,6 +23,11 @@ img {
   border-radius: 0.3em;
 }
 
+div.entry {
+    text-align:center;
+    margin-top:5%;
+}
+
 a.new-entry {
     color:white;
 }
@@ -112,8 +117,8 @@ nav.navbar a {
 
 div.index {
     display:flex;
-    justify-content:center;
-    height:100%;
+    justify-content:wrap;
+    height:fit-content;
 }
 
 div.index-text {
@@ -310,4 +315,13 @@ div.login-page-button {
 
 a.login-page-button {
     color:white;
+}
+
+div.project-index {
+    height: 150px;
+    margin: 15px;
+    padding:10px;
+    border: solid black 1px;
+    background: rgb(106, 170, 238);
+    box-shadow: 5px 5px 10px;
 }

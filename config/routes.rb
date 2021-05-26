@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/index", to: "projects#index"
   resources :projects do
     resources :comments
-    resources :projects_students, only:  [:create]
+    resources :projects_students, only:  [:create, :show]
     # post "enrol" => "projects_students#create"
   end
 

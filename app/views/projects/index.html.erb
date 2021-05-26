@@ -1,26 +1,23 @@
 <body class="container">
 
 <div class="index">
-    <div class="index-text">
-        <h1>iMentor</h1>
-        <ul> 
-            <% @projects.each do |project| %>
-                <div>
-                <h3><%= link_to project.project_name, project %></h3>
-                <p>Starting on: <%= link_to project.start_date.strftime("%A %d %B %Y"), project %></p>
-                <% if project.user.profile.present?%>
-                    <p>Mentor - <%= link_to project.user.first_name + ' ' + project.user.last_name, users_profile_path(project.user.profile.id) %>
-                    <% else %>
-                    Mentor - <%= project.user.first_name + ' ' + project.user.last_name %>
-                <% end %>
-                </p>
-                </div>
+    <h1>iMentor</h1>
+        <% @projects.each do |project| %>
+            <div class="project-index">
+            <h3><%= link_to project.project_name, project %></h3>
+            <p>Starting on: <%= link_to project.start_date.strftime("%A %d %B %Y"), project %></p>
+            <% if project.user.profile.present?%>
+                <p>Mentor - <%= link_to project.user.first_name + ' ' + project.user.last_name, users_profile_path(project.user.profile.id) %>
+                <% else %>
+                Mentor - <%= project.user.first_name + ' ' + project.user.last_name %>
             <% end %>
-            <% if current_user.mentor? %>
-                <button class="button"><%= link_to "Create New Project", new_project_path, class: "new-entry" %></button>
-            <% end %>
-        </ul>
-    </div>
+            </p>
+            </div>
+    <% end %>
 </div>
-
+<div class="entry">
+    <% if current_user.mentor? %>
+        <button class="button"><%= link_to "Create New Project", new_project_path, class: "new-entry" %></button>
+    <% end %>
+</div>
 </body>

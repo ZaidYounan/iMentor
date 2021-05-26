@@ -24,11 +24,13 @@
   </div>
 
   <div>
-    <%= link_to "Enrol", project_projects_students_path(@project), :method => :post, class: "show-buttons" %>
+    <% if @project.students.where(:id => current_user.id).present? %>
+      <strong>You are enrolled.</strong>
+    <% elsif current_user.student? %>
+      <%= link_to "Enrol", project_projects_students_path(@project), :method => :post, class: "show-buttons" %>
+    <% end%>
    <button type="button" id="checkout-button" class="show-buttons">Donate $5</button>
   </div>
-
-  
 
   <h2>Comments</h2>
   <% @project.comments.each do |comment| %>
