@@ -1,6 +1,6 @@
 html, body {
     font-family: "Helvetica Neue";
-    background: #b3cde0;
+    background: azure;
     padding: 0;
     height:100%;
     margin:0;
@@ -29,10 +29,12 @@ div.about-page {
      display:inline-block;
      width: 30%;
      box-shadow: 5px 5px 15px;
-     padding:5px;
+     padding:10px;
      background-color: #6497b1;
      font-family:Verdana;
+     color: #011f4b;
  }
+
 
  @media screen and (max-width: 600px) {
     section.about-page {
@@ -50,21 +52,33 @@ div.about-page {
     }
 }
 
-img {
-     width: 300px;
-     height: 300px;
+img.avatar {
+     max-width: 90%;
+     width: auto;
+     max-height: 70%;
+     height: auto;
+     box-shadow: 5px 15px 25px;
  }
 
 .button {
   background-color: #03396c;
   border: none;
-  color: white;
+//   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border-radius: 0.3em;
+}
+
+button:hover {
+    margin-top:10px;
+    margin-right:5px;
+}
+
+button.button {
+    box-shadow: 5px 15px 25px;
 }
 
 div.entry {
@@ -77,39 +91,60 @@ a.new-entry {
 }
 
 h1.profile-name {
-    position:absolute;
-    left:10%;    
-    top:8%;
+    float:right;
     margin:0;
 }
 
-img {
+h1.profile-title {
+    margin-top: 12%;
+}
+
+div.avatar {
     border-radius: 1em;
-    width: 30%;
-    height:40%;
+    width: auto;
+    max-width:90%;
+    height:70%;
+    margin:0;
     margin-left:1%;
     margin-top:3%;
+    margin-right:1%;
+    float:left;
+    padding:2%;
+
+}
+
+@media screen and (max-width: 770px) {
+    div.avatar {
+        height:auto;
+        float:none;
+    
+    }
 }
 
 section.profile-div {
-    display:flex;
-    justify-content: center;
     height:100%;
     border:solid black 1px;
 }
+
+
+
 
 p.profile-text {
     display:flex;
     flex-direction: column;
     box-shadow: 5px 5px 10px;
-    padding:5px;
+    padding:15px;
     margin-right:10px;
-    background-color: #009DB1;
+    background-color: #005b96;
+    color:white;
+    border-radius:1em;
 
 }
 strong {
     padding-bottom: 5px;
 }
+
+
 
 div.text-div {
     overflow: scroll;
@@ -117,13 +152,30 @@ div.text-div {
     margin-top:1%;
 }
 
-div.name-profile {
-    color:white;
-    width:40%;
-    display:flex;
-    justify-content:flex-end;
-    position:absolute;
-    right:1%;
+a.login-link {
+    padding:0;
+}
+
+
+@media screen and (min-width: 550px) {
+    div.name-profile {
+        color:white;
+        width:40%;
+        display:flex;
+        position:absolute;
+        justify-content:flex-end;
+        right:1%;
+    }
+}
+
+@media screen and (max-width: 549px) {
+    div.name-profile {
+        color:white;
+        display:flex;
+        justify-content:wrap;
+        width:100%;
+    }
+
 }
 
 div.sign-profile {
@@ -183,7 +235,7 @@ nav.navbar a {
     float: left;
     color: azure;
     text-align: center;
-    padding: 14px 16px;
+    padding: 7px 8px;
     text-decoration: none;
     font-size: 17px;
     font-size-adjust: inherit;
@@ -403,8 +455,15 @@ div.project-index {
     padding:10px;
     border: solid black 1px;
     background: #6497b1;
-    box-shadow: 5px 5px 10px;
+    box-shadow: 5px 8px 20px;
     font-family:Verdana;
+    a {
+        color:#011f4b;
+        font-family:Impact;
+        text-decoration:none;
+        font-size:larger;
+        border-bottom: white dotted 1px;
+    }
 }
 
 div.imentor {
@@ -422,6 +481,18 @@ h1.imentor {
     color:azure;
     font-size:25px;
     margin:0;
+    margin-right:5px;
     font-family:Verdana;
 
+}
+
+div.project-show {
+    border: solid black 1px;
+    border-radius: 1em;
+    background-color:#6497b1;
+    width:fit-content;
+    padding: 15px;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    box-shadow: 5px 10px 25px;
 }

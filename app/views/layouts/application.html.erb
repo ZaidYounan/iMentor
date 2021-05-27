@@ -12,8 +12,10 @@
 <body>
   <nav class="navbar">
   <h1 class="imentor">iMentor</h1>
-  <%= link_to "Projects", index_path %>
-  <%= link_to "About", root_path %>
+  <h3>
+    <%= link_to "Projects", index_path %>
+    <%= link_to "About", root_path %>
+  </h3>
       <% if user_signed_in? %>
             <% if current_user.profile.present? %>
             <div class="name-profile">
@@ -24,15 +26,15 @@
               <%= link_to link_to current_user.first_name + ' ' + current_user.last_name, new_users_profile_path, :method => :get %>
       <% end %>
       <h3>
-          <%= link_to 'Account Management', edit_user_registration_path %> 
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <%= link_to 'Account Management', edit_user_registration_path, class: "login-link" %> 
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "login-link" %>
               </div>
       </h3>
       <% else %>
       <div class="name-profile">
         <h3 class="sign-up-acct">
-          <%= link_to "Sign up", new_user_registration_path %> 
-          <%= link_to "Login", new_user_session_path %>
+          <%= link_to "Sign up", new_user_registration_path, class: "login-link" %> 
+          <%= link_to "Login", new_user_session_path, class: "login-link" %>
         </h3>
       </div>
       <% end %>
