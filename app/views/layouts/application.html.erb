@@ -26,7 +26,7 @@
               <%= link_to link_to current_user.first_name + ' ' + current_user.last_name, new_users_profile_path, :method => :get %>
       <% end %>
       <h3>
-          <%= link_to 'Account Management', edit_user_registration_path, class: "login-link" %> 
+          <%= link_to 'Account', edit_user_registration_path, class: "login-link" %> 
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "login-link" %>
               </div>
       </h3>

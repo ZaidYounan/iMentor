@@ -207,8 +207,20 @@ text-align: center;
 }
 
 a.profile-options {
+    color: #011f4b;
+    text-decoration: none;
+    text-transform: uppercase;
+    border:solid #011f4b 1px;
+    padding: 5px;
+    background-color: azure;
     margin:5px;
+    text-decoration:underline;
 }
+
+a.profile-options:hover {
+    padding-left:10%;
+}
+
 
 .navbar {
   background-color: #011f4b;
@@ -379,6 +391,56 @@ div.actions {
     display:flex;
     justify-content:center;
     flex-direction:column;
+}
+
+div.field {
+    padding:1%;
+}
+
+div.cancel-account {
+    margin: 2%;
+    margin-left:0;
+    padding: 1%;
+}
+
+input.edit-account {
+    background-color: #03396c;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 0.3em;
+    margin:10px;
+    width:fit-content;
+
+}
+
+a.links {
+ 
+    color: #011f4b;
+    text-decoration: none;
+    text-transform: uppercase;
+    border:solid #011f4b 1px;
+    padding: 5px;
+    background-color: azure;
+    text-decoration:underline;
+    margin-left:1%;
+      
+}
+
+a.links:hover {
+    padding-left:7%;
+}
+
+input.edit-submit {
+    margin:2%;
+    margin-left:0;
+    max-width: 50%;
+}
+
+h3.cancel-account {
+    margin-bottom: 3%;
 }
 
 div.account-management-text {

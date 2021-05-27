@@ -15,7 +15,7 @@ class TransactionsController < ApplicationController
             }],
             mode: 'payment',
             success_url: checkout_success_url,
-            cancel_url: 'https://google.com',
+            cancel_url: index_url,
           })
         render json: { id: session.id }
     end
