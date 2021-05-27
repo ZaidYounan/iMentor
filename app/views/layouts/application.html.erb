@@ -16,9 +16,9 @@
     <%= link_to "Projects", index_path %>
     <%= link_to "About", root_path %>
   </h3>
+      <div class="name-profile">
       <% if user_signed_in? %>
             <% if current_user.profile.present? %>
-            <div class="name-profile">
               <h3>
                 <%= link_to current_user.first_name + ' ' + current_user.last_name, users_profile_path(current_user.profile.id) %>
               </h3>
@@ -28,7 +28,7 @@
       <h3>
           <%= link_to 'Account', edit_user_registration_path, class: "login-link" %> 
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "login-link" %>
-              </div>
+            </div>
       </h3>
       <% else %>
       <div class="name-profile">
