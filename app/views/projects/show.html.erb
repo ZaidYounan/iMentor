@@ -1,14 +1,14 @@
 <section class="show-page">
   <div class="project-show">
       <h3><%= @project.project_name %></h3>
-      <p><strong>Mentor</strong> - 
+      <p><strong>Mentor</strong> 
       <% if @project.user.profile.present? %>
         <%= link_to @project.user.first_name + ' ' + @project.user.last_name, users_profile_path(@project.user.profile.id) %>
       <% else %>
         <%= @project.user.first_name + ' ' + @project.user.last_name %>
-      <% end %>
-      <p><strong>Description </strong> - <%= @project.project_description %>
-      <p><strong>Students</strong> - </p> 
+      <% end %></p>
+      <p class="proj-desc"><strong>Description </strong> <%= content_tag(:div, @project.project_description, class: "proj-desc") %> </p>
+      <p><strong>Students</strong> </p> 
       <% @project.students.each do |students| %>
         <% if students.profile.present? %>
           <%= link_to students.first_name + ' ' + students.last_name, users_profile_path(students.profile.id) %>

@@ -295,6 +295,7 @@ div.project-form {
 
 section.show-page {
 margin-left: 2.5%;
+
 }
 
 a.show-buttons {
@@ -552,9 +553,25 @@ div.project-show {
     border: solid black 1px;
     border-radius: 1em;
     background-color:#6497b1;
-    width:fit-content;
     padding: 15px;
     margin-bottom: 2%;
     margin-top: 2%;
     box-shadow: 5px 10px 25px;
+}
+
+@media screen and (min-width: 600px) {
+
+    div.project-show {
+        width:fit-content;
+        max-width:60%;
+
+    }
+
+}
+
+
+div.proj-desc {
+    max-width:auto;
+    overflow-wrap:break-word;
+
 }
