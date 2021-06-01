@@ -36,7 +36,11 @@
   <% @project.comments.each do |comment| %>
     <p>
       <strong>
-        <%= link_to comment.user.first_name + " " + comment.user.last_name, users_profile_path(comment.user.profile.id) %>
+        <% if comment.user.profile.present? %>
+          <%= link_to comment.user.first_name + " " + comment.user.last_name, users_profile_path(comment.user.profile.id) %>
+        <% else%>
+          <%= comment.user.first_name + " " + comment.user.last_name%>
+        <% end %>
       </strong>
         <%= comment.created_at.strftime("%d/%m/%Y, %H:%M:%S %p") %>
     </p>
