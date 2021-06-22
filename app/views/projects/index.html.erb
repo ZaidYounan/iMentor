@@ -1,22 +1,24 @@
 <body class="container">
-
-<div class="index">
-        <% @projects.each do |project| %>
-            <div class="project-index">
-            <h3><%= link_to project.project_name, project %></h3>
-            <p><strong>Starting on: </strong><%= link_to project.start_date.strftime("%A %d %B %Y"), project %></p>
-            <% if project.user.profile.present?%>
-                <p><strong>Mentor -</strong> <%= link_to project.user.first_name + ' ' + project.user.last_name, users_profile_path(project.user.profile.id) %>
-                <% else %>
-                <strong>Mentor</strong> - <%= project.user.first_name + ' ' + project.user.last_name %>
+    <section class="project-page">
+        <div class="index">
+                <% @projects.each do |project| %>
+                    <div class="project-index">
+                    <h3><%= link_to project.project_name, project %></h3>
+                    <p><strong>Starting on: </strong><%= link_to project.start_date.strftime("%A %d %B %Y"), project %></p>
+                    <% if project.user.profile.present?%>
+                        <p><strong>Mentor -</strong> <%= link_to project.user.first_name + ' ' + project.user.last_name, users_profile_path(project.user.profile.id) %>
+                        <% else %>
+                        <strong>Mentor</strong> - <%= project.user.first_name + ' ' + project.user.last_name %>
+                    <% end %>
+                    </p>
+                    </div>
             <% end %>
-            </p>
-            </div>
-    <% end %>
-</div>
-<div class="entry">
-    <% if current_user.mentor? %>
-        <button class="button"><%= link_to "Create New Project", new_project_path, class: "new-entry" %></button>
-    <% end %>
-</div>
+        </div>
+    </section>
+        <div class="entry">
+            <% if current_user.mentor? %>
+                <button class="button"><%= link_to "Create New Project", new_project_path, class: "new-entry" %></button>
+            <% end %>
+        </div>
+    
 </body>

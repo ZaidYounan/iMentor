@@ -190,7 +190,7 @@ div.signup-profile {
     width:auto;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 690px) {
     div.name-profile {
         color:white;
         width:40%;
@@ -202,7 +202,7 @@ div.signup-profile {
 
 }
 
-@media screen and (max-width: 549px) {
+@media screen and (max-width: 689px) {
     div.name-profile {
         color:white;
         display:flex;
@@ -297,7 +297,11 @@ div.index {
     display:flex;
     flex-wrap: wrap;
     height:fit-content;
+    justify-content:center;
+    width:80%;
 }
+
+
 
 div.index-text {
     display:inline-block;
@@ -557,7 +561,8 @@ a.login-page-button {
 }
 
 div.project-index {
-    height: 150px;
+    height: 200px;
+    width: 400px;
     margin: 15px;
     padding:10px;
     border: solid black 1px;
@@ -572,6 +577,14 @@ div.project-index {
         border-bottom: white dotted 1px;
     }
 }
+
+    section.project-page {
+        margin-top:1.5%;
+        margin-left:1%;
+        margin-right:1%;
+        display:flex;
+        justify-content:center;
+    }
 
 div.imentor {
     display:flex;
