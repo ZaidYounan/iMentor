@@ -13,6 +13,7 @@ section.about-page {
     justify-content:center;
     margin-top:5%;
     height:100%;
+    width:100%;
 }
 
 div.about-page {
@@ -20,6 +21,7 @@ div.about-page {
     background-size: 100% 100%;
     min-height: 50%;
     min-width: 30%;
+    width:auto;
     box-shadow: 5px 10px 25px;
     padding:5px;
     float:left;
@@ -28,7 +30,8 @@ div.about-page {
 
  div.about-text {
      display:inline-block;
-     width: 30%;
+     width: auto;
+     max-width:40%;
      height:fit-content;
      box-shadow: 5px 5px 15px;
      padding:10px;
@@ -46,17 +49,29 @@ div.about-page {
  @media screen and (max-width: 600px) {
     section.about-page {
         height:100%;
-        margin-top:40%;
+        margin-top:10%;
+        display:flex;
+        flex:none;
     }
 
     div.about-page {
-        width:80%;
         float:none;
+        width:100%;
+        overflow:hidden;
+        position:relative;
+        filter: brightness(65%);
     }
 
     div.about-text {
+        float:none;
         width:auto;
+        left:5%;
         margin:5%;
+        position:absolute;
+        background-color:transparent;
+        font-weight:bolder;
+        color:white;
+        box-shadow:none;
     }
 }
 
@@ -174,8 +189,17 @@ div.text-div {
 
 a.login-link {
     padding:0;
+    overflow:hidden;
+    // dasdasd
 }
 
+div.name-profile {
+    width:30%;
+}
+
+div.signup-profile {
+    width:auto;
+}
 
 @media screen and (min-width: 550px) {
     div.name-profile {
@@ -186,14 +210,20 @@ a.login-link {
         justify-content:flex-end;
         right:1%;
     }
+
 }
 
 @media screen and (max-width: 549px) {
     div.name-profile {
         color:white;
         display:flex;
-        justify-content:wrap;
+        justify-content:center;
         width:100%;
+    }
+
+    nav.navbar {
+        display:flex;
+        justify-content:center;
     }
 
 }
@@ -204,9 +234,10 @@ div.sign-profile {
 }
 
 h3.sign-up-acct {
-    text-align: right;
-    right: 1%;
+    display:flex;
+    justify-content:flex-end;
     overflow:hidden;
+    width:100%;
 }
 
 input.actions-button {
