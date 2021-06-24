@@ -151,6 +151,8 @@ h1.profile-name {
 
 h1.profile-title {
     margin-top: 12%;
+    margin-left:3%;
+    font-size:32px;
 }
 
 div.avatar {
@@ -213,6 +215,7 @@ div.text-div {
     max-width: 50%;
     margin-left:8%;
     margin-top:1%;
+    overflow:auto;
 }
 
 @media screen and (max-width: 770px) {
@@ -235,6 +238,7 @@ div.text-div {
         max-width:80%;
         margin-left:10%;
         margin-right:5%;
+        overflow:visible;
     }
 
     p.profile-text {    
@@ -251,7 +255,9 @@ strong {
 }
 
 
-
+h1.prof {
+    margin:0;
+}
 
 
 a.login-link {
