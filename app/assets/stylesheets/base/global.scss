@@ -597,12 +597,16 @@ a.login-page-button {
 }
 
 div.project-index {
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+    background: linear-gradient(45deg, azure, rgb(134, 160, 191));
     height: 200px;
     width: 400px;
     margin: 15px;
     padding:10px;
     border: solid black 1px;
-    background: #6497b1;
     box-shadow: 5px 8px 20px;
     font-family:Verdana;
     a {
