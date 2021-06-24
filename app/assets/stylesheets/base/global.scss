@@ -4,6 +4,7 @@ html, body {
     padding: 0;
     height:100%;
     margin:0;
+    overflow:scroll;
  }
 
 
@@ -162,15 +163,6 @@ div.avatar {
     margin-right:1%;
     float:left;
     padding:2%;
-
-}
-
-@media screen and (max-width: 770px) {
-    div.avatar {
-        height:auto;
-        float:none;
-    
-    }
 }
 
 @media screen and (max-width: 770px) {
@@ -182,35 +174,84 @@ div.avatar {
 }
 
 section.profile-div {
-    height:100%;
+    display:flex;
+    flex-direction:row;
+    background-color:azure;
+    width:90%;
+    height:85%;
+    border-radius:0.5em;
     border:solid black 1px;
+    box-shadow: 10px 20px 30px;
 }
 
-
-
+section.profile-card {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:99%;
+}
 
 p.profile-text {
+    width:90%;
     display:flex;
     flex-direction: column;
-    box-shadow: 5px 5px 10px;
+    box-shadow: 5px 5px 10px black;
     padding:15px;
-    margin-right:10px;
+    margin-right:3%;
     background-color: #005b96;
     color:white;
-    border-radius:1em;
+    border-radius:0.5em;
 
 }
+
+div.text-div {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    max-width: 50%;
+    margin-left:8%;
+    margin-top:1%;
+}
+
+@media screen and (max-width: 770px) {
+
+    div.avatar {
+        height:auto;
+        float:none;
+        
+    }
+
+    section.profile-div {
+        display:flex;
+        flex-direction: column;
+        overflow:scroll;
+    }
+
+    div.text-div {
+        display:flex;
+        align-items:center;
+        max-width:80%;
+        margin-left:10%;
+        margin-right:5%;
+    }
+
+    p.profile-text {    
+        width:100%;
+    }
+
+}
+
+
+
+
 strong {
     padding-bottom: 5px;
 }
 
 
 
-div.text-div {
-    overflow: scroll;
-    margin-left:2%;
-    margin-top:1%;
-}
+
 
 a.login-link {
     padding:0;
