@@ -624,6 +624,15 @@ section.project-page {
     height:100%;
 }
 
+@media screen and (min-width: 1150px) {
+
+    div.index {
+        justify-content:normal;
+        margin-left:15%;
+    }
+
+}
+
 div.imentor {
     display:flex;
     justify-content:inherit;
